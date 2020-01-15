@@ -33,16 +33,45 @@ let beige = Color(hue: 69, saturation: 6, brightness: 87, alpha: 100)
 // thickness x axis 14 corner 11
 canvas.fillColor = pink
 canvas.drawRectangle(at: Point(x:0, y:0), width: 400, height: 600)
+// Black Bottom
 canvas.fillColor = black
-canvas.drawRectangle(at: Point(x:18, y:0), width: 14, height: 25)
+for positionX in stride(from: 0, to: 16, by: 4) {
+    canvas.drawRectangle(at: Point(x:11+14*positionX, y:0), width: 14, height: 25+14*positionX)
+}
 
-/*:
- ## Use Source Control
- 
- Remember to commit and push your work before 12:05 PM on Wednesday, January 15, 2020, please.
+for reverse in stride(from: 0, to: 16, by: 4){
+    canvas.drawRectangle(at: Point(x:400-25-14*reverse, y:0), width: 14, height: 25+14*reverse)
+}
+// Left side Black
+for positionX in stride(from: 0, to: 16, by: 4) {
+    canvas.drawRectangle(at: Point(x:0, y:11+14*positionX), width: 25+14*positionX, height:14)
+}
 
- ## Template code
- The code below is necessary to see results in the Assistant Editor at right. Please do not remove.
- */
+for reverse in stride(from: 0, to: 16, by: 4){
+    canvas.drawRectangle(at: Point(x:0, y:400-25-14*reverse), width:25+14*reverse , height:14 )
+}
+// Right side Black
+
+for rightside in stride(from: 0, to: 16, by: 4) {
+    canvas.drawRectangle(at: Point(x:400-25-14*rightside,y:11+14*rightside), width: 11+14*rightside+25, height: 14)
+}
+
+for rightside in stride(from: 0, to: 16, by: 4) {
+    canvas.drawRectangle(at: Point(x:400-25-14*rightside,y:400-25-14*rightside), width: 11+14*rightside+25, height: 14)
+}
+
+// Upside down
+for positionX in stride(from: 0, to: 16, by: 4) {
+    canvas.drawRectangle(at: Point(x:11+14*positionX, y:400-25-14*positionX), width: 14, height: 25+14*positionX)
+}
+
+for positionX in stride(from: 0, to: 16, by: 4) {
+    canvas.drawRectangle(at: Point(x:400-25-14*positionX, y:400-25-14*positionX), width: 14, height: 25+14*positionX)
+}
+
+
+
+
+
 PlaygroundPage.current.liveView = canvas
 
