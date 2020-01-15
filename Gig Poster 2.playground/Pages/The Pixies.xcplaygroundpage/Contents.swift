@@ -35,6 +35,8 @@ canvas.fillColor = pink
 canvas.drawRectangle(at: Point(x:0, y:0), width: 400, height: 600)
 // Black Bottom
 canvas.fillColor = black
+canvas.drawShapesWithBorders = false
+
 for positionX in stride(from: 0, to: 16, by: 4) {
     canvas.drawRectangle(at: Point(x:11+14*positionX, y:0), width: 14, height: 25+14*positionX)
 }
@@ -69,6 +71,42 @@ for positionX in stride(from: 0, to: 16, by: 4) {
     canvas.drawRectangle(at: Point(x:400-25-14*positionX, y:400-25-14*positionX), width: 14, height: 25+14*positionX)
 }
 
+// White
+canvas.fillColor = beige
+canvas.drawShapesWithBorders = false
+for positionX in stride(from: 0, to: 12, by: 4) {
+    canvas.drawRectangle(at: Point(x:11+14*positionX+28, y:0), width: 14, height: 25+14*positionX+28)
+}
+
+for reverse in stride(from: 0, to: 12, by: 4){
+    canvas.drawRectangle(at: Point(x:400-25-14*reverse-28, y:0), width: 14, height: 25+14*reverse+28)
+}
+// Left side Black
+for positionX in stride(from: 0, to: 12, by: 4) {
+    canvas.drawRectangle(at: Point(x:0, y:11+14*positionX+28), width: 25+14*positionX+28, height:14)
+}
+
+for reverse in stride(from: 0, to: 12, by: 4){
+    canvas.drawRectangle(at: Point(x:0, y:400-25-14*reverse-28), width:25+14*reverse+28 , height:14 )
+}
+// Right side Black
+
+for rightside in stride(from: 0, to: 12, by: 4) {
+    canvas.drawRectangle(at: Point(x:400-25-14*rightside-28,y:11+14*rightside+28), width: 11+14*rightside+25+28, height: 14)
+}
+
+for rightside in stride(from: 0, to: 12, by: 4) {
+    canvas.drawRectangle(at: Point(x:400-25-14*rightside-28,y:400-25-14*rightside-28), width: 11+14*rightside+25+28, height: 14)
+}
+
+// Upside down
+for positionX in stride(from: 0, to: 12, by: 4) {
+    canvas.drawRectangle(at: Point(x:11+14*positionX+28, y:400-25-14*positionX-28), width: 14, height: 25+14*positionX+28)
+}
+
+for positionX in stride(from: 0, to: 12, by: 4) {
+    canvas.drawRectangle(at: Point(x:400-25-14*positionX-28, y:400-25-14*positionX-28), width: 14, height: 25+14*positionX+28)
+}
 
 
 
