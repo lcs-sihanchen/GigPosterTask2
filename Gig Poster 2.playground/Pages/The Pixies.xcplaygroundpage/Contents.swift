@@ -30,7 +30,11 @@ let black = Color(hue: 0, saturation: 0, brightness: 0, alpha: 100)
 let beige = Color(hue: 69, saturation: 6, brightness: 87, alpha: 100)
 
 // Begin your solution here...
-
+// thickness x axis 14 corner 11
+canvas.fillColor = pink
+canvas.drawRectangle(at: Point(x:0, y:0), width: 400, height: 600)
+canvas.fillColor = black
+canvas.drawRectangle(at: Point(x:18, y:0), width: 14, height: 25)
 
 /*:
  ## Use Source Control
